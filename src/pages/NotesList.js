@@ -14,7 +14,8 @@ function NotesList() {
   }, []);
 
   return (
-    <Wrapper>
+ <div>
+     <Wrapper>
       {notes.length > 0 ? (
         notes.map((note) => (
           <Note key={note.id}>
@@ -22,9 +23,9 @@ function NotesList() {
               <h2>{note.title}</h2>
               <ReactMarkdown>{note.content}</ReactMarkdown>
               <p>
-                <em>Created By:</em>
+                <em>Author:</em>
                 &nbsp;·&nbsp;
-                <cite>By {note.user.username}</cite>
+                <cite>{note.user.username}</cite>
               </p>
             </Box>
           </Note>
@@ -38,6 +39,7 @@ function NotesList() {
         </>
       )}
     </Wrapper>
+ </div>
   );
 }
 
