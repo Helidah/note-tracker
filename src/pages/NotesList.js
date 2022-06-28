@@ -20,12 +20,12 @@ function NotesList() {
           <Note key={note.id}>
             <Box>
               <h2>{note.title}</h2>
-              {/* <p>
-                <em>Time to Complete: {note.minutesToComplete} minutes</em>
+              <ReactMarkdown>{note.content}</ReactMarkdown>
+              <p>
+                <em>Created By:</em>
                 &nbsp;·&nbsp;
                 <cite>By {note.user.username}</cite>
-              </p> */}
-              <ReactMarkdown>{note.content}</ReactMarkdown>
+              </p>
             </Box>
           </Note>
         ))

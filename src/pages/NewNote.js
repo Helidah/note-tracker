@@ -5,18 +5,8 @@ import ReactMarkdown from "react-markdown";
 import { Button, Error, FormField, Input, Label, Textarea } from "../styles";
 
 function NewNote({ user }) {
-  const [title, setTitle] = useState("My Awesome Recipe");
-  const [content, setContent] = useState(`Here's how you make it.
-  
-## Ingredients
-
-- 1c Sugar
-- 1c Spice
-
-## Instructions
-
-**Mix** sugar and spice. _Bake_ for 30 minutes.
-  `);
+  const [title, setTitle] = useState("Note Title...");
+  const [content, setContent] = useState("Note Content here......");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
@@ -78,15 +68,15 @@ function NewNote({ user }) {
           </FormField>
         </form>
       </WrapperChild>
-      {/* <WrapperChild>
+      <WrapperChild>
         <h1>{title}</h1>
         <p>
-          <em>Time to Complete: {minutesToComplete} minutes</em>
-          &nbsp;·&nbsp;
+          {/* <em>Time to Complete: {} minutes</em>
+          &nbsp;·&nbsp; */}
           <cite>By {user.username}</cite>
         </p>
-        <ReactMarkdown>{instructions}</ReactMarkdown>
-      </WrapperChild> */}
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </WrapperChild>
     </Wrapper>
   );
 }
