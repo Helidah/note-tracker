@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import NotesList from "../pages/NotesList";
 import NewNote from "../pages/NewNote";
@@ -21,11 +20,11 @@ function App() {
 
   return (
     <>
-      <NavBar user={user} setUser={setUser} />
+      {/* <NavBar user={user} setUser={setUser} /> */}
       <main>
         <Routes>
           <Route path="/new" element={<NewNote user={user} />} />
-          <Route path="/" element={<NotesList />}/>
+          <Route path="/" element={<NotesList user={user} setUser={setUser} />}/>
         </Routes>
       </main>
     </>

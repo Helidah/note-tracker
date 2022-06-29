@@ -12,7 +12,7 @@ function Login({ onLogin }) {
     <div>
       <div className="bg-white dark:bg-gray-900">
         <div className="flex justify-center h-screen">
-          <div className="hidden bg-cover lg:block lg:w-2/3 the-bg">
+          <div className="hidden bg-cover lg:block lg:w-1/2 the-bg">
             <div className="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
               <div>
                 <h1 className="text-4xl font-bold text-white">Note Tracker</h1>
@@ -33,7 +33,7 @@ function Login({ onLogin }) {
                       <Divider />
                       <p>
                         Don't have an account? &nbsp;
-                        <Button color="secondary" className="md-hover:bg-blue-900 md-hover:text-white"onClick={() => setShowLogin(false)}>
+                        <Button color="secondary" className="md-hover:bg-blue-900 md-hover:text-white" onClick={() => setShowLogin(false)}>
                           Sign Up
                         </Button>
                       </p>
@@ -58,32 +58,6 @@ function Login({ onLogin }) {
       </div>
 
     </div>
-    // <Wrapper>
-    //   <Logo>Note Tracker</Logo>
-    //   {showLogin ? (
-    //     <>
-    //       <LoginForm onLogin={onLogin} />
-    //       <Divider />
-    //       <p>
-    //         Don't have an account? &nbsp;
-    //         <Button color="secondary" onClick={() => setShowLogin(false)}>
-    //           Sign Up
-    //         </Button>
-    //       </p>
-    //     </>
-    //   ) : (
-    //     <>
-    //       <SignUpForm onLogin={onLogin} />
-    //       <Divider />
-    //       <p>
-    //         Already have an account? &nbsp;
-    //         <Button color="secondary" onClick={() => setShowLogin(true)}>
-    //           Log In
-    //         </Button>
-    //       </p>
-    //     </>
-    //   )}
-    // </Wrapper>
   );
 }
 
