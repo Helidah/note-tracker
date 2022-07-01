@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { Button } from "../styles";
 
@@ -7,10 +7,11 @@ function NotesList({ user, setUser }) {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    fetch("/notes")
+    fetch("https://arcane-atoll-17408.herokuapp.com/notes")
       .then((r) => r.json())
       .then(setNotes);
   }, []);
+
 
   return (
     <div>
@@ -51,16 +52,17 @@ function NotesList({ user, setUser }) {
                         <p className="text-xl font-medium text-blue-800"><em>Author:</em>&nbsp;·&nbsp; {note.user.username}</p>
                       </div>
                       <div className="flex justify-end mt-1">
-                        <p className="text-xl font-medium text-green-700"><em>Recieved_by Eng:</em>.......</p>
+                        <p className="text-xl font-medium text-green-700"><em>Received_by Eng:</em>.......</p>
                       </div>
                     </div>
                   ))
                 ) : (
                   <>
                     <h2>No Notes Found</h2>
-                    <Button as={Link} to="/new">
+                    <br></br>
+                    <NavLink className="border border-blue-700 m-10 bg-blue-700 text-center text-white" as={Link} to="/new">
                       Form a new note content.
-                    </Button>
+                    </NavLink>
                   </>
                 )}
               </div>

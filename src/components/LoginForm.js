@@ -10,7 +10,8 @@ function LoginForm({ onLogin }) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch("/login", {
+    fetch("https://arcane-atoll-17408.herokuapp.com/login", {
+      mode: 'no-cors',
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,40 +28,40 @@ function LoginForm({ onLogin }) {
   }
 
   return (
-<div>
-<form onSubmit={handleSubmit}>
-      <FormField>
-        <Label htmlFor="username">Username</Label>
-        <Input
-          type="text"
-          id="username"
-          autoComplete="off"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </FormField>
-      <FormField>
-        <Label htmlFor="password">Password</Label>
-        <Input
-          type="password"
-          id="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </FormField>
-      <FormField>
-        <Button variant="fill" color="primary" type="submit">
-          {isLoading ? "Loading..." : "Login"}
-        </Button>
-      </FormField>
-      <FormField>
-        {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
-      </FormField>
-    </form>
-</div>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <FormField>
+          <Label htmlFor="username">Username</Label>
+          <Input
+            type="text"
+            id="username"
+            autoComplete="off"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </FormField>
+        <FormField>
+          <Label htmlFor="password">Password</Label>
+          <Input
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </FormField>
+        <FormField>
+          <Button variant="fill" color="primary" type="submit">
+            {isLoading ? "Loading..." : "Login"}
+          </Button>
+        </FormField>
+        <FormField>
+          {errors.map((err) => (
+            <Error key={err}>{err}</Error>
+          ))}
+        </FormField>
+      </form>
+    </div>
   );
 }
 
